@@ -21,6 +21,7 @@ package propel.core.utils;
 import static propel.core.functional.predicates.Strings.isNotNullOrEmpty;
 import static propel.core.functional.predicates.Strings.lengthEquals;
 import static propel.core.functional.projections.Strings.charAt;
+
 import java.math.BigDecimal;
 import java.net.Inet4Address;
 import java.net.InetAddress;
@@ -34,9 +35,11 @@ import java.util.Date;
 import java.util.List;
 import java.util.Locale;
 import java.util.UUID;
+
 import lombok.Validate;
 import lombok.Validate.NotNull;
 import lombok.val;
+
 import org.joda.time.Duration;
 import org.joda.time.LocalDateTime;
 import org.joda.time.format.DateTimeFormat;
@@ -44,6 +47,7 @@ import org.joda.time.format.DateTimeFormatter;
 import org.joda.time.format.DateTimeFormatterBuilder;
 import org.joda.time.format.DateTimeParser;
 import org.joda.time.format.ISODateTimeFormat;
+
 import propel.core.TryResult;
 import propel.core.collections.lists.ReifiedArrayList;
 import propel.core.collections.lists.ReifiedList;

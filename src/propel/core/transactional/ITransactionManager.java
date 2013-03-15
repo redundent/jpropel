@@ -19,6 +19,7 @@
 package propel.core.transactional;
 
 import java.util.List;
+
 import lombok.Actions.Action0;
 
 /**

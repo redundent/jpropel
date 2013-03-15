@@ -20,7 +20,6 @@ package propel.core.collections.maps.multi;
 
 import java.util.Map;
 import java.util.Set;
-import propel.core.collections.maps.multi.ReifiedMultimap;
 
 /**
  * Interface of a MapMultimap (a map of maps).

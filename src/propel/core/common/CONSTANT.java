@@ -18,9 +18,10 @@
 // /////////////////////////////////////////////////////////
 package propel.core.common;
 
-import propel.core.utils.StringUtils;
 import java.nio.charset.Charset;
 import java.util.UUID;
+
+import propel.core.utils.StringUtils;
 
 /**
  * Defines a wide range of constants

@@ -20,9 +20,11 @@ package propel.core.collections.maps.combinational;
 
 import static propel.core.functional.projections.Tuples.kvpKeySelector;
 import static propel.core.functional.projections.Tuples.kvpValueSelector;
+
 import java.util.Iterator;
 import java.util.List;
 import java.util.Map;
+
 import lombok.Functions.Function1;
 import lombok.Validate;
 import lombok.Validate.NotNull;

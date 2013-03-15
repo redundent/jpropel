@@ -18,18 +18,19 @@
 // /////////////////////////////////////////////////////////
 package propel.core.utils;
 
-import propel.core.common.CONSTANT;
-import propel.core.userTypes.UnsignedInteger;
-import propel.core.userTypes.UnsignedLong;
-import propel.core.userTypes.UnsignedShort;
 import java.math.BigInteger;
 import java.nio.ByteOrder;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.UUID;
+
 import lombok.Validate;
 import lombok.Validate.NotNull;
 import lombok.val;
+import propel.core.common.CONSTANT;
+import propel.core.userTypes.UnsignedInteger;
+import propel.core.userTypes.UnsignedLong;
+import propel.core.userTypes.UnsignedShort;
 
 /**
  * Provides utility functionality for byte array manipulations

@@ -18,11 +18,12 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.lists;
 
+import java.util.Iterator;
+import java.util.LinkedList;
+
 import propel.core.collections.ReifiedIterable;
 import propel.core.utils.SuperTypeToken;
 import propel.core.utils.SuperTypeTokenException;
-import java.util.Iterator;
-import java.util.LinkedList;
 
 /**
  * A type-aware linked list. This collection allows nulls to be inserted.

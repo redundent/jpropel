@@ -18,8 +18,9 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.sets;
 
-import propel.core.collections.IValueStore;
 import java.util.Set;
+
+import propel.core.collections.IValueStore;
 
 /**
  * The interface of a type-aware set

@@ -19,6 +19,7 @@
 package propel.core.validation.propertyMetadata;
 
 import org.joda.time.DateTime;
+
 import propel.core.validation.ValidationException;
 
 /**

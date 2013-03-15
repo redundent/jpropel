@@ -18,11 +18,6 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.queues;
 
-import propel.core.collections.ReifiedIterable;
-import propel.core.collections.lists.ReifiedLinkedList;
-import propel.core.collections.lists.ReifiedList;
-import propel.core.utils.SuperTypeToken;
-import propel.core.utils.SuperTypeTokenException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
@@ -30,6 +25,12 @@ import java.util.NoSuchElementException;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.Lock;
 import java.util.concurrent.locks.ReentrantLock;
+
+import propel.core.collections.ReifiedIterable;
+import propel.core.collections.lists.ReifiedLinkedList;
+import propel.core.collections.lists.ReifiedList;
+import propel.core.utils.SuperTypeToken;
+import propel.core.utils.SuperTypeTokenException;
 
 /**
  * A type-aware thread-safe queue implementation. This collection allows null items to be inserted.

@@ -35,7 +35,7 @@ public @interface Trace
   /**
    * The logging level to be used
    */
-  LogLevel level() default LogLevel.TRACE;
+  LogLevel level();
 
   /**
    * Whether to trace arguments

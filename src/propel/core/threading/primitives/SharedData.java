@@ -18,9 +18,10 @@
 // /////////////////////////////////////////////////////////
 package propel.core.threading.primitives;
 
-import propel.core.model.IShared;
 import java.util.concurrent.locks.ReentrantLock;
+
 import lombok.Predicates.Predicate1;
+import propel.core.model.IShared;
 
 /**
  * Generic class allowing for easy reader/writer access to an object. Uses Monitors to disallowed concurrent read/write access.

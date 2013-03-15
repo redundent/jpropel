@@ -18,6 +18,12 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.maps.avl;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Map;
+import java.util.concurrent.locks.ReentrantLock;
+
 import propel.core.collections.KeyValuePair;
 import propel.core.collections.ReifiedIterable;
 import propel.core.collections.lists.ReifiedArrayList;
@@ -26,11 +32,6 @@ import propel.core.collections.maps.ReifiedMap;
 import propel.core.utils.Linq;
 import propel.core.utils.SuperTypeToken;
 import propel.core.utils.SuperTypeTokenException;
-import java.util.ArrayList;
-import java.util.Iterator;
-import java.util.List;
-import java.util.Map;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * A type-aware thread-safe AVL-tree-backed hashtable. This map does not allow null keys to be inserted.

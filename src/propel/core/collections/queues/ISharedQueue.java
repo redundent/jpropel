@@ -18,10 +18,11 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.queues;
 
+import java.util.NoSuchElementException;
+
 import propel.core.collections.ReifiedIterable;
 import propel.core.collections.lists.ReifiedList;
 import propel.core.model.IShared;
-import java.util.NoSuchElementException;
 
 /**
  * The interface of a type-aware thread-safe queue

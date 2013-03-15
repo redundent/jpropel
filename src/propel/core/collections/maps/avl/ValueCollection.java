@@ -19,12 +19,13 @@
 
 package propel.core.collections.maps.avl;
 
-import propel.core.collections.ReifiedIterable;
-import propel.core.collections.lists.ReifiedArrayList;
-import propel.core.collections.lists.ReifiedList;
 import java.lang.reflect.Array;
 import java.util.Collection;
 import java.util.Iterator;
+
+import propel.core.collections.ReifiedIterable;
+import propel.core.collections.lists.ReifiedArrayList;
+import propel.core.collections.lists.ReifiedList;
 
 /**
  * Represents an immutable type-aware collection of values.

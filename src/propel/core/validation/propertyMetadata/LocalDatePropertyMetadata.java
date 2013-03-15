@@ -19,9 +19,11 @@
 package propel.core.validation.propertyMetadata;
 
 import lombok.val;
+
 import org.joda.time.LocalDate;
 import org.joda.time.LocalDateTime;
 import org.joda.time.LocalTime;
+
 import propel.core.validation.ValidationException;
 
 /**

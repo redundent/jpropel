@@ -20,6 +20,7 @@ package propel.core.utils;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import lombok.Actions.Action0;
 import lombok.Actions.Action1;
 import lombok.Functions.Function1;

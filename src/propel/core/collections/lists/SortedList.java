@@ -18,15 +18,16 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.lists;
 
+import java.lang.reflect.Array;
+import java.util.Comparator;
+import java.util.Iterator;
+import java.util.PriorityQueue;
+
 import propel.core.collections.ReifiedIterable;
 import propel.core.collections.arrays.ReadOnlyArrayIterator;
 import propel.core.utils.Linq;
 import propel.core.utils.SuperTypeToken;
 import propel.core.utils.SuperTypeTokenException;
-import java.lang.reflect.Array;
-import java.util.Comparator;
-import java.util.Iterator;
-import java.util.PriorityQueue;
 
 /**
  * A type-aware sorted list of comparable elements. This collection does not allow nulls to be inserted.

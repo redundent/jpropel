@@ -18,13 +18,14 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.sets;
 
+import java.util.Iterator;
+import java.util.Set;
+
 import propel.core.collections.ReifiedIterable;
 import propel.core.collections.lists.ReifiedList;
 import propel.core.collections.maps.avl.AvlHashtable;
 import propel.core.utils.SuperTypeToken;
 import propel.core.utils.SuperTypeTokenException;
-import java.util.Iterator;
-import java.util.Set;
 
 /**
  * A type-aware AVL-tree-backed set. This collection does not allow null items to be inserted.

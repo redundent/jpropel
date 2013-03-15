@@ -18,13 +18,16 @@
 // /////////////////////////////////////////////////////////
 package propel.core.configuration;
 
-import org.w3c.dom.Document;
-import org.w3c.dom.Node;
-import propel.core.utils.ReflectionUtils;
-import javax.xml.parsers.DocumentBuilder;
-import javax.xml.parsers.DocumentBuilderFactory;
 import java.io.File;
 import java.io.FileNotFoundException;
+
+import javax.xml.parsers.DocumentBuilder;
+import javax.xml.parsers.DocumentBuilderFactory;
+
+import org.w3c.dom.Document;
+import org.w3c.dom.Node;
+
+import propel.core.utils.ReflectionUtils;
 
 /**
  * A class behaving similarly to .NET's ConfigurationManager, i.e. being able to load an XML configuration file and access its contents in a

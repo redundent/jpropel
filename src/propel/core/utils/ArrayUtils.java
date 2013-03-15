@@ -18,20 +18,21 @@
 // /////////////////////////////////////////////////////////
 package propel.core.utils;
 
-import propel.core.collections.lists.ReifiedArrayList;
-import propel.core.collections.lists.ReifiedLinkedList;
-import propel.core.collections.lists.ReifiedList;
-import propel.core.collections.lists.SortedList;
-import propel.core.common.CONSTANT;
 import java.lang.reflect.Array;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Collection;
 import java.util.Comparator;
 import java.util.List;
+
 import lombok.Validate;
 import lombok.Validate.NotNull;
 import lombok.val;
+import propel.core.collections.lists.ReifiedArrayList;
+import propel.core.collections.lists.ReifiedLinkedList;
+import propel.core.collections.lists.ReifiedList;
+import propel.core.collections.lists.SortedList;
+import propel.core.common.CONSTANT;
 
 /**
  * Provides utility functionality for array manipulations

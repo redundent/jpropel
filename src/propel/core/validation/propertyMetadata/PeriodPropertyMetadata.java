@@ -19,9 +19,8 @@
 package propel.core.validation.propertyMetadata;
 
 import org.joda.time.Period;
+
 import propel.core.validation.ValidationException;
-import propel.core.validation.propertyMetadata.BoundedValueTypePropertyMetadata;
-import propel.core.validation.propertyMetadata.NullablePropertyMetadata;
 
 /**
  * Class aiding in validation of Period classes

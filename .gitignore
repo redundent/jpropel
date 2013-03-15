@@ -1,0 +1,6 @@
+/dist
+/.settings
+/build
+/.classpath
+/.project
+/ivyCache

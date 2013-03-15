@@ -18,11 +18,11 @@
 // /////////////////////////////////////////////////////////
 package propel.core.functional.predicates;
 
-import propel.core.utils.Linq;
-import propel.core.utils.StringUtils;
-import propel.core.utils.StringComparison;
-import propel.core.utils.ReflectionUtils;
 import lombok.Predicate;
+import propel.core.utils.Linq;
+import propel.core.utils.ReflectionUtils;
+import propel.core.utils.StringComparison;
+import propel.core.utils.StringUtils;
 
 /**
  * Some common, re-usable predicates for objects

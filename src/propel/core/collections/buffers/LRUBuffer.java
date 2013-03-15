@@ -18,6 +18,8 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.buffers;
 
+import java.util.Iterator;
+
 import propel.core.collections.ReifiedIterable;
 import propel.core.collections.lists.ReadOnlyListIterator;
 import propel.core.collections.lists.ReifiedArrayList;
@@ -25,7 +27,6 @@ import propel.core.collections.lists.ReifiedList;
 import propel.core.utils.Linq;
 import propel.core.utils.SuperTypeToken;
 import propel.core.utils.SuperTypeTokenException;
-import java.util.Iterator;
 
 /**
  * A type-aware least recently used (LRU) buffer. This collection does not allow nulls to be inserted.

@@ -19,6 +19,7 @@
 package propel.core.functional.predicates;
 
 import java.io.File;
+
 import lombok.Predicate;
 
 /**

@@ -1,0 +1,53 @@
+<?xml version="1.0" encoding="utf-8"?>
+<project name="jpropel" xmlns:ivy="antlib:com.zwitserloot.ivyplusplus">
+	<target name="load-ipp" depends="download-ipp">
+		<taskdef classpath="lib/ivyplusplus.jar" resource="com/zwitserloot/ivyplusplus/antlib.xml" uri="antlib:com.zwitserloot.ivyplusplus" />
+		<ivy:ensureippversion version="1.6" property="ivyplusplus.minimumAvailable" />
+	</target>
+
+	<target name="download-ipp" unless="ivyplusplus.available">
+		<mkdir dir="lib" />
+		<get src="http://projectlombok.org/downloads/ivyplusplus.jar" dest="lib/ivyplusplus.jar" usetimestamp="true" />
+	</target>
+
+	<target name="redownload-ipp" unless="ivyplusplus.minimumAvailable">
+		<get src="http://projectlombok.org/downloads/ivyplusplus.jar" dest="lib/ivyplusplus.jar" />
+		<fail>A new version of ivyplusplus was required and has been downloaded. Rerun the script to continue.</fail>
+	</target>
+
+	<target name="ensureBuildDeps" depends="config-ivy">
+		<ivy:resolve file="ivy.xml" refresh="true" />
+		<ivy:retrieve />
+	</target>
+
+	<target name="ensure-ipp" depends="load-ipp, redownload-ipp" />
+
+	<target name="config-ivy" depends="ensure-ipp" unless="ivy.config">
+		<ivy:configure file="ivysettings.xml" />
+		<property name="ivy.config" value="true" />
+	</target>
+	
+	<target name="compile" depends="ensureBuildDeps">
+		<path id="cp">
+			<fileset dir="lib" includes="*.jar" />
+		</path>
+		
+		<mkdir dir="build" />
+		<javac destdir="build" source="1.7" target="1.7" includeantruntime="false" classpathref="cp">
+			<src path="src" />
+			<exclude name="Main.java"/>
+		</javac>
+	</target>
+	
+	<target name="dist" depends="compile">
+		<mkdir dir="dist" />
+		<jar destfile="dist/${ivy.module}-${ivy.revision}.jar">
+			<fileset dir="build" includes="**/*.class" />
+		</jar>
+	</target>
+	
+	<target name="clean">
+		<delete dir="build" />
+		<delete dir="dist" />
+	</target>
+</project>

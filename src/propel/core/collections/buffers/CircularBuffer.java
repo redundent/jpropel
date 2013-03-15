@@ -18,6 +18,9 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.buffers;
 
+import java.lang.reflect.Array;
+import java.util.Iterator;
+
 import propel.core.collections.ReifiedIterable;
 import propel.core.collections.arrays.ReadOnlyArrayIterator;
 import propel.core.collections.lists.ReifiedArrayList;
@@ -26,8 +29,6 @@ import propel.core.counters.ModuloCounter;
 import propel.core.utils.Linq;
 import propel.core.utils.SuperTypeToken;
 import propel.core.utils.SuperTypeTokenException;
-import java.lang.reflect.Array;
-import java.util.Iterator;
 
 /**
  * A type-aware circular buffer of limited size. This collection does not allow nulls to be inserted.

@@ -19,6 +19,7 @@
 package propel.core.security.cryptography;
 
 import java.security.InvalidKeyException;
+
 import propel.core.security.cryptography.ciphers.ICipher;
 import propel.core.security.cryptography.ciphers.XTEACipherEcb;
 import propel.core.utils.ArrayUtils;

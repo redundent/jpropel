@@ -18,13 +18,14 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.queues;
 
+import java.util.ArrayList;
+import java.util.List;
+
 import propel.core.observer.IObservableSubject;
 import propel.core.observer.ISubjectObserver;
 import propel.core.observer.ObserverFailureHandlingMode;
 import propel.core.observer.ObserverNotificationException;
 import propel.core.utils.SuperTypeTokenException;
-import java.util.ArrayList;
-import java.util.List;
 
 /**
  * A shared queue for use by multiple threads.

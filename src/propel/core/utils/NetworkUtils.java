@@ -18,9 +18,10 @@
 // /////////////////////////////////////////////////////////
 package propel.core.utils;
 
-import propel.core.common.CONSTANT;
 import java.net.InetSocketAddress;
 import java.net.SocketAddress;
+
+import propel.core.common.CONSTANT;
 
 /**
  * Provides utility functionality for networking stuff 

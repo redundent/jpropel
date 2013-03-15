@@ -18,8 +18,8 @@
 // /////////////////////////////////////////////////////////
 package propel.core.functional.projections;
 
-import propel.core.common.CONSTANT;
 import lombok.Function;
+import propel.core.common.CONSTANT;
 
 /**
  * Some common, re-usable projections for objects

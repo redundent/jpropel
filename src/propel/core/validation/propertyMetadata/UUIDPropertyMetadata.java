@@ -18,9 +18,10 @@
 // /////////////////////////////////////////////////////////
 package propel.core.validation.propertyMetadata;
 
+import java.util.UUID;
+
 import propel.core.common.CONSTANT;
 import propel.core.validation.ValidationException;
-import java.util.UUID;
 
 /**
  * Class aiding in validation of GUIDs

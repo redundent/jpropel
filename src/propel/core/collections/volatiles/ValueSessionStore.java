@@ -18,15 +18,21 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.volatiles;
 
+import java.util.ArrayList;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Timer;
+import java.util.TimerTask;
+import java.util.concurrent.locks.ReentrantLock;
+
 import org.joda.time.LocalDateTime;
+
 import propel.core.collections.IValueStore;
 import propel.core.collections.lists.ReifiedList;
 import propel.core.collections.maps.avl.AvlHashtable;
 import propel.core.common.CONSTANT;
 import propel.core.utils.SuperTypeToken;
 import propel.core.utils.SuperTypeTokenException;
-import java.util.*;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * A type-aware thread-safe Session object that allows multiple threads to operate on a collection of time-expiring objects. This collection

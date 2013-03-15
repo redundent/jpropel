@@ -18,12 +18,13 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.maps.data;
 
+import java.util.Iterator;
+
 import propel.core.collections.KeyValuePair;
 import propel.core.collections.lists.ReifiedArrayList;
 import propel.core.collections.lists.ReifiedList;
 import propel.core.utils.SuperTypeToken;
 import propel.core.utils.SuperTypeTokenException;
-import java.util.Iterator;
 
 /**
  * Encapsulates Keys and Values, usually sourced from Dictionaries, hashtables and other map-type data structures. These values can be used

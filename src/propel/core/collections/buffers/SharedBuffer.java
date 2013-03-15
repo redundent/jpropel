@@ -18,14 +18,15 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.buffers;
 
+import java.util.Iterator;
+import java.util.concurrent.locks.Condition;
+import java.util.concurrent.locks.ReentrantLock;
+
 import propel.core.collections.ReifiedIterable;
 import propel.core.collections.lists.ReifiedArrayList;
 import propel.core.collections.lists.ReifiedList;
 import propel.core.model.IShared;
 import propel.core.utils.SuperTypeTokenException;
-import java.util.Iterator;
-import java.util.concurrent.locks.Condition;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * A type-aware thread-safe limited size circular buffer. This collection does not allow nulls to be inserted.

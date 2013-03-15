@@ -18,11 +18,12 @@
 // /////////////////////////////////////////////////////////
 package propel.core.utils;
 
+import java.math.BigInteger;
+import java.util.UUID;
+
 import propel.core.userTypes.UnsignedInteger;
 import propel.core.userTypes.UnsignedLong;
 import propel.core.userTypes.UnsignedShort;
-import java.math.BigInteger;
-import java.util.UUID;
 
 /**
  * Provides utility functionality for hashing data in non-cryptographically secure ways.

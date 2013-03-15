@@ -20,6 +20,7 @@ package propel.core.common;
 
 import java.io.ByteArrayOutputStream;
 import java.io.PrintWriter;
+
 import lombok.Validate;
 import lombok.Validate.NotNull;
 import lombok.val;

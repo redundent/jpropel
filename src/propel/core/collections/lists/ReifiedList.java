@@ -18,8 +18,9 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.lists;
 
-import propel.core.collections.ReifiedIterable;
 import java.util.List;
+
+import propel.core.collections.ReifiedIterable;
 
 /**
  * A type-aware list interface

@@ -18,17 +18,18 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.stacks;
 
-import propel.core.collections.ReifiedIterable;
-import propel.core.collections.lists.ReifiedLinkedList;
-import propel.core.collections.lists.ReifiedList;
-import propel.core.utils.SuperTypeToken;
-import propel.core.utils.SuperTypeTokenException;
 import java.util.ArrayList;
 import java.util.Iterator;
 import java.util.List;
 import java.util.NoSuchElementException;
 import java.util.concurrent.locks.Condition;
 import java.util.concurrent.locks.ReentrantLock;
+
+import propel.core.collections.ReifiedIterable;
+import propel.core.collections.lists.ReifiedLinkedList;
+import propel.core.collections.lists.ReifiedList;
+import propel.core.utils.SuperTypeToken;
+import propel.core.utils.SuperTypeTokenException;
 
 /**
  * A shared stack for use by multiple threads. This collection allows null items to be inserted.

@@ -26,6 +26,9 @@
 
 package propel.core.collections.maps.avl;
 
+import java.util.Iterator;
+import java.util.Map;
+
 import propel.core.TryResult;
 import propel.core.collections.KeyNotFoundException;
 import propel.core.collections.KeyValuePair;
@@ -33,9 +36,6 @@ import propel.core.collections.maps.IHashtable;
 import propel.core.collections.maps.ReifiedMap;
 import propel.core.utils.SuperTypeToken;
 import propel.core.utils.SuperTypeTokenException;
-
-import java.util.Iterator;
-import java.util.Map;
 
 /**
  * A type-aware AVL-tree-backed hashtable.

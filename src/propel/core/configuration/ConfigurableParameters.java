@@ -18,8 +18,16 @@
 // /////////////////////////////////////////////////////////
 package propel.core.configuration;
 
+import java.io.FileNotFoundException;
+import java.math.BigDecimal;
+import java.net.InetAddress;
+import java.util.ArrayList;
+import java.util.List;
+import java.util.UUID;
+
 import org.joda.time.Duration;
 import org.joda.time.LocalDateTime;
+
 import propel.core.TryResult;
 import propel.core.collections.KeyValuePair;
 import propel.core.collections.ReifiedIterable;
@@ -34,12 +42,6 @@ import propel.core.utils.ConversionUtils;
 import propel.core.utils.ReflectionUtils;
 import propel.core.utils.StringComparison;
 import propel.core.utils.StringUtils;
-import java.io.FileNotFoundException;
-import java.math.BigDecimal;
-import java.net.InetAddress;
-import java.util.ArrayList;
-import java.util.List;
-import java.util.UUID;
 
 /**
  * Allows for the application configuration file to be probed for the presence of key/value pairs. It is used for setting constant values in

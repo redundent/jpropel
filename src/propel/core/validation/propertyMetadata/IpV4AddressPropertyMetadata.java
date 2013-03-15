@@ -18,12 +18,13 @@
 // /////////////////////////////////////////////////////////
 package propel.core.validation.propertyMetadata;
 
+import java.util.List;
+
 import propel.core.common.CONSTANT;
 import propel.core.configuration.ConfigurableConsts;
 import propel.core.configuration.ConfigurableParameters;
 import propel.core.utils.StringUtils;
 import propel.core.validation.ValidationException;
-import java.util.List;
 
 /**
  * Class aiding in validation of IPv4 addresses

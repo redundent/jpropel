@@ -18,12 +18,17 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.sets;
 
+import java.util.ArrayList;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.List;
+import java.util.Set;
+import java.util.concurrent.locks.ReentrantLock;
+
 import propel.core.collections.ReifiedIterable;
 import propel.core.collections.lists.ReifiedList;
 import propel.core.model.IShared;
 import propel.core.utils.SuperTypeTokenException;
-import java.util.*;
-import java.util.concurrent.locks.ReentrantLock;
 
 /**
  * A thread-safe type-aware AVL-tree-backed set. This collection does not allow null items to be inserted.

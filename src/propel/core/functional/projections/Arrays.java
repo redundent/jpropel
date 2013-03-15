@@ -19,6 +19,7 @@
 package propel.core.functional.projections;
 
 import java.util.List;
+
 import lombok.Function;
 import propel.core.collections.lists.ReifiedArrayList;
 import propel.core.collections.lists.ReifiedList;

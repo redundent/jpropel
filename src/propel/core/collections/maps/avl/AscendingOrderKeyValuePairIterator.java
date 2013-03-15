@@ -26,9 +26,10 @@
 
 package propel.core.collections.maps.avl;
 
-import propel.core.collections.KeyValuePair;
 import java.util.Iterator;
 import java.util.NoSuchElementException;
+
+import propel.core.collections.KeyValuePair;
 
 /**
  * Enumerates the key/value pairs of the AVL tree. The elements are enumerated in ascending order.

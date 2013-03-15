@@ -19,12 +19,13 @@
 package propel.core.functional.projections;
 
 import java.util.Map;
+
+import lombok.Function;
 import propel.core.collections.KeyValuePair;
 import propel.core.functional.tuples.Pair;
 import propel.core.functional.tuples.Quadruple;
 import propel.core.functional.tuples.Quintuple;
 import propel.core.functional.tuples.Triple;
-import lombok.Function;
 
 /**
  * Some common, re-usable projections for tuples

@@ -20,11 +20,14 @@ package propel.core.utils;
 
 import java.util.ArrayList;
 import java.util.List;
+
 import lombok.Validate;
 import lombok.Validate.NotNull;
+
 import org.w3c.dom.NamedNodeMap;
 import org.w3c.dom.Node;
 import org.w3c.dom.NodeList;
+
 import propel.core.common.CONSTANT;
 
 /**

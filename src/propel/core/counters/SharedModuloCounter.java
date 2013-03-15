@@ -18,8 +18,9 @@
 // /////////////////////////////////////////////////////////
 package propel.core.counters;
 
-import propel.core.model.IShared;
 import java.util.concurrent.locks.ReentrantLock;
+
+import propel.core.model.IShared;
 
 /**
  * Thread-safe class using Monitors to provide modulo counter functionality. This class should be preferred over SharedModuloCounterLight

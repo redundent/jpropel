@@ -18,15 +18,16 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.lists;
 
+import java.lang.reflect.Array;
+import java.util.Collection;
+import java.util.Iterator;
+import java.util.ListIterator;
+
 import propel.core.collections.ReifiedIterable;
 import propel.core.collections.arrays.ReadOnlyArrayIterator;
 import propel.core.utils.Linq;
 import propel.core.utils.SuperTypeToken;
 import propel.core.utils.SuperTypeTokenException;
-import java.lang.reflect.Array;
-import java.util.Collection;
-import java.util.Iterator;
-import java.util.ListIterator;
 
 /**
  * A type-aware array-backed list that uses similar semantics and strategy to the java.util.ArrayList. This collection allows nulls to be

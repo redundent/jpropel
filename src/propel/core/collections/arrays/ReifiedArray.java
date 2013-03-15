@@ -18,10 +18,11 @@
 // /////////////////////////////////////////////////////////
 package propel.core.collections.arrays;
 
-import propel.core.utils.ArrayUtils;
-import propel.core.utils.PrimitiveArrayType;
 import java.lang.reflect.Array;
 import java.util.Iterator;
+
+import propel.core.utils.ArrayUtils;
+import propel.core.utils.PrimitiveArrayType;
 
 /**
  * Encapsulates a primitive or object array. For primitive arrays, you must specify System.Object as generic type parameter, to allow for
