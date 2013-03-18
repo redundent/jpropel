@@ -18,6 +18,7 @@ import java.util.Set;
 import java.util.TreeMap;
 import java.util.TreeSet;
 
+import lombok.Extension;
 import lombok.Functions.Function1;
 import lombok.Functions.Function2;
 import lombok.Predicates.Predicate1;
@@ -59,6 +60,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TSource, TAccumulate> TAccumulate aggregate(
 			@NotNull final Iterable<TSource> values,
 			@NotNull final TAccumulate seed,
@@ -74,6 +76,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TSource, TAccumulate> TAccumulate aggregate(
 			@NotNull final TSource[] values,
 			@NotNull final TAccumulate seed,
@@ -90,6 +93,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TSource, TAccumulate, TResult> TResult aggregate(
 			@NotNull final Iterable<TSource> values,
 			@NotNull final TAccumulate seed,
@@ -113,6 +117,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TSource, TAccumulate, TResult> TResult aggregate(
 			@NotNull final TSource[] values,
 			@NotNull final TAccumulate seed,
@@ -135,6 +140,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean all(@NotNull final Iterable<T> values,
 			@NotNull final Predicate1<? super T> predicate) {
 		for (T v : values) {
@@ -154,6 +160,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean all(@NotNull T[] values,
 			@NotNull final Predicate1<? super T> predicate) {
 		for (int i = 0; i < values.length; i++) {
@@ -172,6 +179,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean any(@NotNull final Iterable<T> values,
 			@NotNull final Predicate1<? super T> predicate) {
 		for (T v : values) {
@@ -191,6 +199,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean any(@NotNull final T[] values,
 			@NotNull final Predicate1<? super T> predicate) {
 		val count = values.length;
@@ -213,6 +222,7 @@ public final class Linq {
 	 * @throws NullPointerException
 	 *             When an argument is null.
 	 */
+	@Extension
 	public static <TSource, TDest> Iterable<TDest> cast(
 			final Iterable<TSource> values, final Class<TDest> destinationClass) {
 		return cast(values, destinationClass, InvalidCastBehaviour.Remove);
@@ -228,6 +238,7 @@ public final class Linq {
 	 * @throws NullPointerException
 	 *             When an argument is null.
 	 */
+	@Extension
 	public static <TSource, TDest> TDest[] cast(TSource[] values,
 			Class<TDest> destClass) {
 		return (TDest[]) cast(values, destClass, InvalidCastBehaviour.Remove);
@@ -245,6 +256,7 @@ public final class Linq {
 	 *             Unrecognized cast behaviour.
 	 */
 	@Validate
+	@Extension
 	public static <TSource, TDest> Iterable<TDest> cast(
 			@NotNull final Iterable<TSource> values,
 			@NotNull final Class<TDest> destinationClass,
@@ -274,6 +286,7 @@ public final class Linq {
 	 *             Unrecognized cast behaviour.
 	 */
 	@Validate
+	@Extension
 	public static <TSource, TDest> TDest[] cast(
 			@NotNull final TSource[] values,
 			@NotNull final Class<TDest> destClass,
@@ -307,6 +320,7 @@ public final class Linq {
 	 */
 	@Validate
 	@SuppressWarnings("unchecked")
+	@Extension
 	public static <T> Iterable<T> concat(@NotNull final Iterable<T> first, @NotNull final Iterable<T> second) {
 		List<T> result = new ArrayList<T>();
 		
@@ -331,6 +345,7 @@ public final class Linq {
 	 */
 	@Validate
 	@SuppressWarnings("unchecked")
+	@Extension
 	public static <T> T[] concat(@NotNull final T[] first, @NotNull final T[] second) {
 		int size = first.length + second.length;
 		T[] array = (T[]) new Object[size];
@@ -355,6 +370,7 @@ public final class Linq {
 	 *             When the values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean contains(@NotNull final Iterable<T> values, final T item) {
 		if (item == null) {
 			return containsNull(values);
@@ -371,6 +387,7 @@ public final class Linq {
 	 *             When the values argument or the comparer is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean contains(@NotNull final Iterable<T> values, T item, @NotNull final Comparator<? super T> comparer) {
 		if (item == null) {
 			return containsNull(values);
@@ -387,6 +404,7 @@ public final class Linq {
 	 *             When the values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean contains(@NotNull final T[] values, final T item) {
 		if (item == null) {
 			return containsNull(values);
@@ -403,6 +421,7 @@ public final class Linq {
 	 *             When the array or the comparer is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean contains(@NotNull final T[] values, T item, @NotNull final Comparator<? super T> comparer) {
 		if (item == null) {
 			return containsNull(values);
@@ -420,6 +439,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean containsAny(@NotNull final Iterable<T> values, @NotNull final Iterable<T> items) {
 		for (T item : items) {
 			if (contains(values, item)) {
@@ -439,6 +459,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean containsAny(@NotNull final Iterable<T> values,
 			@NotNull final Iterable<T> items, Comparator<? super T> comparer) {
 		for (T item : items) {
@@ -459,6 +480,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean containsAny(@NotNull final T[] values,
 			@NotNull final T[] items) {
 		for (T item : items) {
@@ -479,6 +501,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean containsAny(@NotNull final T[] values,
 			@NotNull final T[] items, final Comparator<? super T> comparer) {
 		for (T item : items) {
@@ -499,6 +522,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean containsAll(@NotNull final Iterable<T> values, @NotNull final Iterable<T> items) {
 		for (T item : items) {
 			if (!contains(values, item)) {
@@ -518,6 +542,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean containsAll(@NotNull final Iterable<T> values, @NotNull final Iterable<T> items,
 			final Comparator<? super T> comparer) {
 		for (T item : items) {
@@ -538,6 +563,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean containsAll(@NotNull final T[] values, @NotNull final T[] items) {
 		for (T item : items) {
 			if (!contains(values, item)) {
@@ -557,6 +583,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean containsAll(@NotNull final T[] values, @NotNull final T[] items, Comparator<? super T> comparer) {
 		for (T item : items) {
 			if (!contains(values, item, comparer)) {
@@ -574,6 +601,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> int count(@NotNull final Iterable<T> values) {
 		if (values instanceof Collection<?>) {
 			Collection<?> list = (Collection<?>) values;
@@ -608,6 +636,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> int count(@NotNull final T[] array) {
 		return array.length;
 	}
@@ -621,6 +650,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> defaultIfEmpty(@NotNull final Iterable<T> values) {
 		boolean empty = true;
 		for (T item : values) {
@@ -642,6 +672,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] defaultIfEmpty(@NotNull final T[] values) {
 		val result = new ArrayList<T>(DEFAULT_LIST_SIZE);
 		for (T item : values) {
@@ -663,6 +694,7 @@ public final class Linq {
 	 * @throws NullPointerException
 	 *             An argument is null.
 	 */
+	@Extension
 	public static <T> String join(Iterable<T> values, String delimiter) {
 		return join(values, delimiter, MiscProjections.<T>toStringify());
 	}
@@ -677,6 +709,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> String join(@NotNull final Iterable<T> values, @NotNull final String delimiter, Function1<T, String> selector) {
 		val sb = new StringBuilder();
 		Iterator<T> iterator = values.iterator();
@@ -699,6 +732,7 @@ public final class Linq {
 	 * @throws NullPointerException
 	 *             An argument is null.
 	 */
+	@Extension
 	public static <T> String delimit(T[] values, String delimiter) {
 		return delimit(values, delimiter, MiscProjections.<T>toStringify());
 	}
@@ -713,6 +747,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> String delimit(@NotNull final T[] values, @NotNull final String delimiter, Function1<T, String> selector) {
 		val sb = new StringBuilder(256);
 
@@ -734,6 +769,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> distinct(@NotNull final Iterable<T> values) {
 		return distinct(values, null);
 	}
@@ -745,6 +781,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] distinct(@NotNull final T[] values) {
 		return distinct(values, null);
 	}
@@ -757,6 +794,7 @@ public final class Linq {
 	 *             When the values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> distinct(@NotNull final Iterable<T> values, final Comparator<? super T> comparer) {
 		Set<T> set;
 		if (comparer != null) {
@@ -780,6 +818,7 @@ public final class Linq {
 	 *             When the values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] distinct(@NotNull final T[] values, final Comparator<? super T> comparer) {
 		val list = new ReifiedArrayList<T>(DEFAULT_LIST_SIZE, values.getClass().getComponentType());
 		Set<T> set;
@@ -807,6 +846,7 @@ public final class Linq {
 	 *             When the index is out of range.
 	 */
 	@Validate
+	@Extension
 	public static <T> T elementAt(@NotNull final Iterable<T> values, final int index) {
 		if (index < 0) {
 			throw new IndexOutOfBoundsException("index=" + index);
@@ -830,6 +870,7 @@ public final class Linq {
 	 *             When the values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T elementAtOrDefault(@NotNull final Iterable<T> values, final int index) {
 		if (index >= 0) {
 			int i = 0;
@@ -851,6 +892,7 @@ public final class Linq {
 	 *             When the values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T elementAtOrDefault(@NotNull final T[] values, final int index) {
 		if (index >= 0 && index < values.length) {
 			return values[index];
@@ -866,6 +908,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> except(@NotNull final Iterable<T> values, @NotNull final Iterable<T> removedValues) {
 		return except(values, removedValues, null);
 	}
@@ -877,6 +920,7 @@ public final class Linq {
 	 *             When the values or removedValues argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> except(@NotNull final Iterable<T> values,
 			@NotNull final Iterable<T> removedValues,
 			final Comparator<? super T> comparer) {
@@ -905,6 +949,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] except(@NotNull final T[] values, @NotNull final T[] removedValues) {
 		return except(values, removedValues, null);
 	}
@@ -916,6 +961,7 @@ public final class Linq {
 	 *             When the values or removedValues argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] except(@NotNull final T[] values,
 			@NotNull final T[] removedValues, Comparator<? super T> comparer) {
 		T[] distinctValues;
@@ -949,6 +995,7 @@ public final class Linq {
 	 *             There is no first element.
 	 */
 	@Validate
+	@Extension
 	public static <T> T first(@NotNull final Iterable<T> values) {
 		return values.iterator().next();
 	}
@@ -962,6 +1009,7 @@ public final class Linq {
 	 *             There is no first element.
 	 */
 	@Validate
+	@Extension
 	public static <T> T first(@NotNull final T[] values) {
 		if (values.length <= 0) {
 			throw new NoSuchElementException("The array is empty.");
@@ -980,6 +1028,7 @@ public final class Linq {
 	 *             There is no match to the given predicate.
 	 */
 	@Validate
+	@Extension
 	public static <T> T first(@NotNull final Iterable<T> values, Predicate1<? super T> predicate) {
 		for (T element : values) {
 			if (predicate.apply(element)) {
@@ -1000,6 +1049,7 @@ public final class Linq {
 	 *             There is no match to the given predicate.
 	 */
 	@Validate
+	@Extension
 	public static <T> T first(@NotNull final T[] values, @NotNull final Predicate1<? super T> predicate) {
 		for (T item : values) {
 			if (predicate.apply(item)) {
@@ -1018,6 +1068,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T firstOrDefault(@NotNull final Iterable<T> values) {
 		for (T item : values) {
 			return item;
@@ -1034,6 +1085,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T firstOrDefault(@NotNull final Iterable<T> values,
 			@NotNull final Predicate1<? super T> predicate) {
 		for (T element : values) {
@@ -1053,6 +1105,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T firstOrDefault(@NotNull final T[] values) {
 		if (values.length == 0) {
 			return null;
@@ -1069,6 +1122,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T firstOrDefault(@NotNull final T[] values,
 			Predicate1<? super T> predicate) {
 		for (T element : values) {
@@ -1087,6 +1141,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TKey, TResult> Map<TKey, Iterable<TResult>> groupBy(
 			@NotNull final Iterable<TResult> values,
 			@NotNull final Function1<? super TResult, TKey> keySelector) {
@@ -1100,6 +1155,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TKey, TResult> Map<TKey, Iterable<TResult>> groupBy(
 			@NotNull final TResult[] values,
 			@NotNull final Function1<TResult, TKey> keySelector) {
@@ -1113,6 +1169,7 @@ public final class Linq {
 	 *             When the values argument or the key selector is null.
 	 */
 	@Validate
+	@Extension
 	public static <TKey, TResult> Map<TKey, Iterable<TResult>> groupBy(
 			@NotNull final Iterable<TResult> values,
 			@NotNull final Function1<? super TResult, TKey> keySelector,
@@ -1147,6 +1204,7 @@ public final class Linq {
 	 *             When the values argument or the key selector is null.
 	 */
 	@Validate
+	@Extension
 	public static <TKey, TResult> Map<TKey, Iterable<TResult>> groupBy(
 			@NotNull final TResult[] values,
 			@NotNull final Function1<TResult, TKey> keySelector,
@@ -1182,6 +1240,7 @@ public final class Linq {
 	 *             When the values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> int indexOf(@NotNull final Iterable<T> values, T element) {
 		return element == null ? indexOfNull(values) : indexOfNotNull(values, element);
 	}
@@ -1194,6 +1253,7 @@ public final class Linq {
 	 *             When the values or the comparer argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> int indexOf(@NotNull final Iterable<T> values, T element, final Comparator<? super T> comparer) {
 		return element == null ? indexOfNull(values) : indexOfNotNull(values, element, comparer);
 	}
@@ -1206,6 +1266,7 @@ public final class Linq {
 	 *             When the values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> int indexOf(@NotNull final T[] values, T element) {
 		return element == null ? indexOfNull(values) : indexOfNotNull(values, element);
 	}
@@ -1218,6 +1279,7 @@ public final class Linq {
 	 *             When the values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> int indexOf(@NotNull final T[] values, T element, final Comparator<? super T> comparer) {
 		return element == null ? indexOfNull(values) : indexOfNotNull(values, element, comparer);
 	}
@@ -1229,6 +1291,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> intersect(@NotNull final Iterable<T> first, @NotNull final Iterable<T> second) {
 		return intersect(first, second, null);
 	}
@@ -1240,6 +1303,7 @@ public final class Linq {
 	 *             When the first or second argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> intersect(@NotNull final Iterable<T> first,
 			@NotNull final Iterable<T> second,
 			final Comparator<? super T> comparer) {
@@ -1269,6 +1333,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] intersect(@NotNull final T[] first, @NotNull final T[] second) {
 		return intersect(first, second, null);
 	}
@@ -1280,6 +1345,7 @@ public final class Linq {
 	 *             When the first or second argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] intersect(@NotNull final T[] first,
 			@NotNull final T[] second, final Comparator<? super T> comparer) {
 		val result = new ArrayList<T>(DEFAULT_LIST_SIZE);
@@ -1311,6 +1377,7 @@ public final class Linq {
 	 *             Is the argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean isEmpty(@NotNull final Iterable<T> values) {
 		return !values.iterator().hasNext();
 	}
@@ -1322,6 +1389,7 @@ public final class Linq {
 	 *             Is the argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> boolean isEmpty(@NotNull final T[] values) {
 		return values.length == 0;
 	}
@@ -1335,6 +1403,7 @@ public final class Linq {
 	 *             If the iterable is empty
 	 */
 	@Validate
+	@Extension
 	public static <T> T last(@NotNull final Iterable<T> values) {
 		// check if any items present
 		T last;
@@ -1362,6 +1431,7 @@ public final class Linq {
 	 *             If the array is empty
 	 */
 	@Validate
+	@Extension
 	public static <T> T last(@NotNull final T[] array) {
 		if (array.length <= 0) {
 			throw new NoSuchElementException("The array is empty.");
@@ -1380,6 +1450,7 @@ public final class Linq {
 	 *             There is no match to the given predicate
 	 */
 	@Validate
+	@Extension
 	public static <T> T last(@NotNull final Iterable<T> values,
 			@NotNull final Predicate1<? super T> predicate) {
 		T result = null;
@@ -1409,6 +1480,7 @@ public final class Linq {
 	 *             There is no match to the given predicate
 	 */
 	@Validate
+	@Extension
 	public static <T> T last(@NotNull final T[] values,
 			@NotNull final Predicate1<? super T> predicate) {
 		T result = null;
@@ -1436,6 +1508,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T lastOrDefault(@NotNull final Iterable<T> values) {
 		T result = null;
 		boolean found = false;
@@ -1456,6 +1529,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T lastOrDefault(@NotNull final T[] values) {
 		if (values.length <= 0) {
 			return null;
@@ -1472,6 +1546,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T lastOrDefault(@NotNull final Iterable<T> values,
 			@NotNull final Predicate1<? super T> predicate) {
 		T result = null;
@@ -1493,6 +1568,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T lastOrDefault(@NotNull final T[] values,
 			@NotNull final Predicate1<? super T> predicate) {
 		T result = null;
@@ -1516,6 +1592,7 @@ public final class Linq {
 	 *             If the values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> int lastIndexOf(@NotNull final Iterable<? super T> values, final T element) {
 		return element == null ? lastIndexOfNull(values) : lastIndexOfNotNull(values, element);
 	}
@@ -1528,6 +1605,7 @@ public final class Linq {
 	 *             If the values or comparer argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> int lastIndexOf(@NotNull final Iterable<T> values,
 			final T element, final Comparator<? super T> comparer) {
 		return element == null ? lastIndexOfNull(values) : lastIndexOfNotNull(values, element, comparer);
@@ -1541,6 +1619,7 @@ public final class Linq {
 	 *             If the values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> int lastIndexOf(@NotNull final T[] values, final T element) {
 		return element == null ? lastIndexOfNull(values) : lastIndexOfNotNull(values, element);
 	}
@@ -1553,6 +1632,7 @@ public final class Linq {
 	 *             If the values or comparer argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> int lastIndexOf(@NotNull final T[] values,
 			final T element, final Comparator<? super T> comparer) {
 		return element == null ? lastIndexOfNull(values) : lastIndexOfNotNull(values, element, comparer);
@@ -1566,6 +1646,7 @@ public final class Linq {
 	 *             An argument is null
 	 */
 	@Validate
+	@Extension
 	public static <T extends Comparable<T>> T max(@NotNull final T[] items) {
 		if (items.length <= 0)
 			return null;
@@ -1588,6 +1669,7 @@ public final class Linq {
 	 *             An argument is null
 	 */
 	@Validate
+	@Extension
 	public static int max(@NotNull final int[] items) {
 		if (items.length <= 0) {
 			return 0;
@@ -1611,6 +1693,7 @@ public final class Linq {
 	 *             An argument is null
 	 */
 	@Validate
+	@Extension
 	public static long max(@NotNull final long[] items) {
 		if (items.length <= 0) {
 			return 0;
@@ -1634,6 +1717,7 @@ public final class Linq {
 	 *             An argument is null
 	 */
 	@Validate
+	@Extension
 	public static <T extends Comparable<T>> T min(@NotNull final T[] items) {
 		if (items.length <= 0) {
 			return null;
@@ -1657,6 +1741,7 @@ public final class Linq {
 	 *             An argument is null
 	 */
 	@Validate
+	@Extension
 	public static int min(@NotNull final int[] items) {
 		if (items.length <= 0) {
 			return 0;
@@ -1680,6 +1765,7 @@ public final class Linq {
 	 *             An argument is null
 	 */
 	@Validate
+	@Extension
 	public static long min(@NotNull final long[] items) {
 		if (items.length <= 0) {
 			return 0;
@@ -1704,6 +1790,7 @@ public final class Linq {
 	 *             When the argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TSource, TDest> Iterable<TDest> ofType(
 			@NotNull final Iterable<TSource> values,
 			@NotNull final Class<TDest> destinationClass) {
@@ -1727,6 +1814,7 @@ public final class Linq {
 	 *             When the argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TSource, TDest> TDest[] ofType(
 			@NotNull final TSource[] values,
 			@NotNull final Class<TDest> destinationClass) {
@@ -1750,6 +1838,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TKey extends Comparable<TKey>, TResult> Iterable<TResult> orderBy(
 			@NotNull final Iterable<TResult> values,
 			@NotNull final Function1<? super TResult, TKey> keySelector) {
@@ -1763,6 +1852,7 @@ public final class Linq {
 	 *             When the values or keySelector argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TKey extends Comparable<TKey>, TResult> ReifiedList<TResult> orderBy(
 			@NotNull final Iterable<TResult> values,
 			@NotNull final Function1<? super TResult, TKey> keySelector,
@@ -1800,6 +1890,7 @@ public final class Linq {
 	 *             When the values or keySelector argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TKey, TResult> TResult[] orderBy(
 			@NotNull final TResult[] values,
 			@NotNull final Function1<TResult, TKey> keySelector,
@@ -1837,6 +1928,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TKey extends Comparable<TKey>, TResult> TResult[] orderBy(
 			@NotNull final TResult[] values,
 			@NotNull final Function1<TResult, TKey> keySelector) {
@@ -1851,6 +1943,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TKey extends Comparable<TKey>, TKey2 extends Comparable<TKey2>, TResult> Iterable<TResult> orderByThenBy(
 			@NotNull final Iterable<TResult> values,
 			@NotNull final Function1<? super TResult, TKey> keySelector,
@@ -1866,6 +1959,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TKey extends Comparable<TKey>, TKey2 extends Comparable<TKey2>, TResult> TResult[] orderByThenBy(
 			@NotNull final TResult[] values,
 			@NotNull final Function1<TResult, TKey> keySelector,
@@ -1881,6 +1975,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TKey, TKey2, TResult> Iterable<TResult> orderByThenBy(
 			@NotNull final Iterable<TResult> values,
 			@NotNull final Function1<? super TResult, TKey> keySelector,
@@ -1943,6 +2038,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TKey, TKey2, TResult> TResult[] orderByThenBy(
 			@NotNull final TResult[] values,
 			@NotNull final Function1<TResult, TKey> keySelector,
@@ -2007,6 +2103,7 @@ public final class Linq {
 	 *             An index is out of range.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> range(@NotNull final Iterable<T> values, final int start, final int finish) {
 		if (start < 0) {
 			throw new IndexOutOfBoundsException("start=" + start);
@@ -2043,6 +2140,7 @@ public final class Linq {
 	 *             An index is out of range.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] range(@NotNull final T[] values, final int start, final int finish) {
 		if (start < 0) {
 			throw new IndexOutOfBoundsException("start=" + start);
@@ -2069,6 +2167,7 @@ public final class Linq {
 	 *             The step function argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> range(@NotNull final T start, @NotNull final T end, @NotNull final Function1<T, T> stepFunction) {
 		T current = start;
 
@@ -2093,6 +2192,7 @@ public final class Linq {
 	 *             The predicate or step function argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> range(@NotNull final T start,
 			@NotNull final Predicate1<? super T> predicate,
 			@NotNull final Function1<T, T> stepFunction) {
@@ -2112,6 +2212,7 @@ public final class Linq {
 	 *             When the destination class is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> repeat(@NotNull final T value, final int count) {
 		if (count < 0) {
 			throw new IllegalArgumentException("count=" + count);
@@ -2129,6 +2230,7 @@ public final class Linq {
 	 *             When the argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> List<T> reverse(@NotNull final List<T> values) {
 		Collections.reverse(values);
 
@@ -2142,6 +2244,7 @@ public final class Linq {
 	 *             When the argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> reverse(@NotNull final Iterable<T> values) {
 		val result = new ArrayList<T>(DEFAULT_LIST_SIZE);
 		for (T item : values) {
@@ -2160,6 +2263,7 @@ public final class Linq {
 	 *             When the argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> ReifiedList<T> reverse(@NotNull final ReifiedIterable<T> values) {
 		val result = new ReifiedArrayList<T>(values);
 		Collections.reverse(result);
@@ -2174,6 +2278,7 @@ public final class Linq {
 	 *             When the argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] reverse(@NotNull final T[] values) {
 		return ArrayUtils.reverse(values);
 	}
@@ -2185,6 +2290,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TSource, TResult> Iterable<TResult> select(
 			@NotNull final Iterable<TSource> values,
 			@NotNull final Function1<? super TSource, TResult> selector) {
@@ -2200,6 +2306,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TSource, TResult> TResult[] select(
 			@NotNull final TSource[] values,
 			@NotNull final Function1<TSource, TResult> selector) {
@@ -2220,6 +2327,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TSource, TResult> Iterable<TResult> selectMany(
 			@NotNull final Iterable<TSource> values,
 			@NotNull final Function1<TSource, List<TResult>> selector) {
@@ -2244,6 +2352,7 @@ public final class Linq {
 	 *             determined.
 	 */
 	@Validate
+	@Extension
 	public static <TSource, TResult> TResult[] selectMany(
 			@NotNull final TSource[] values,
 			Function1<TSource, ReifiedList<TResult>> selector) {
@@ -2279,6 +2388,7 @@ public final class Linq {
 	 *             When count is out of range.
 	 */
 	@Validate
+	@Extension
 	public static <T> T single(@NotNull final T[] values) {
 		if (values.length != 1) {
 			throw new IllegalArgumentException("The given array should contain a single element");
@@ -2297,6 +2407,7 @@ public final class Linq {
 	 *             When count is out of range.
 	 */
 	@Validate
+	@Extension
 	public static <T> T single(@NotNull final Iterable<T> values) {
 		int i = 0;
 		T result = null;
@@ -2326,6 +2437,7 @@ public final class Linq {
 	 *             When count is out of range.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> skip(@NotNull final Iterable<T> values,
 			final int count) {
 		if (count < 0) {
@@ -2355,6 +2467,7 @@ public final class Linq {
 	 *             When count is out of range.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] skip(@NotNull final T[] values, final int count) {
 		if (count < 0) {
 			throw new IllegalArgumentException("count=" + count);
@@ -2382,6 +2495,7 @@ public final class Linq {
 	 *             When an argument is null
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> skipWhile(@NotNull final Iterable<T> values,
 			@NotNull final Predicate1<? super T> predicate) {
 		boolean skipping = true;
@@ -2406,6 +2520,7 @@ public final class Linq {
 	 *             When an argument is null
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] skipWhile(@NotNull final T[] values,
 			@NotNull final Predicate1<T> predicate) {
 		val result = new ArrayList<T>(DEFAULT_LIST_SIZE);
@@ -2432,6 +2547,7 @@ public final class Linq {
 	 *             The values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> take(@NotNull final Iterable<T> values,
 			final int count) {
 		Iterator<T> iterator = values.iterator();
@@ -2451,6 +2567,7 @@ public final class Linq {
 	 *             The count argument is out of range.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] take(@NotNull final T[] values, final int count) {
 		val result = new ArrayList<T>(count);
 		for (int i = 0; i < count && i < values.length; i++) {
@@ -2468,6 +2585,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> takeWhile(@NotNull final Iterable<T> values,
 			@NotNull final Predicate1<? super T> predicate) {
 		for (T item : values) {
@@ -2487,6 +2605,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] takeWhile(@NotNull final T[] values,
 			@NotNull final Predicate1<? super T> predicate) {
 		val result = new ArrayList<T>(DEFAULT_LIST_SIZE);
@@ -2511,6 +2630,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] toArray(@NotNull final Enumeration<T> enumeration,
 			@NotNull final Class<?> componentType) {
 		val result = new ReifiedArrayList<T>(componentType);
@@ -2528,6 +2648,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] toArray(@NotNull final ReifiedList<T> list) {
 		return toArray(list, list.getGenericTypeParameter());
 	}
@@ -2539,6 +2660,7 @@ public final class Linq {
 	 *             The values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] toArray(@NotNull final ReifiedIterable<T> values) {
 		return toArray(values, values.getGenericTypeParameter());
 	}
@@ -2550,6 +2672,7 @@ public final class Linq {
 	 *             An argument is nul.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] toArray(@NotNull final Iterable<T> values,
 			@NotNull final Class<?> componentType) {
 		// count items
@@ -2573,6 +2696,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] toArray(@NotNull final Collection<T> list,
 			@NotNull final Class<?> componentType) {
 		// count items
@@ -2596,6 +2720,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T, TKey extends Comparable<TKey>, TValue> AvlHashtable<TKey, TValue> toAvlHashtable(
 			@NotNull final Iterable<T> values,
 			@NotNull final Function1<T, TKey> keySelector,
@@ -2618,6 +2743,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T, TKey extends Comparable<TKey>, TValue> AvlHashtable<TKey, TValue> toAvlHashtable(
 			@NotNull final T[] values,
 			@NotNull final Function1<T, TKey> keySelector,
@@ -2639,6 +2765,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> List<T> toList(
 			@NotNull final Enumeration<? extends T> enumeration) {
 		val result = new ArrayList<T>();
@@ -2656,6 +2783,7 @@ public final class Linq {
 	 *             An argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> ReifiedList<T> toList(
 			@NotNull final Enumeration<T> enumeration,
 			@NotNull final Class<?> genericTypeParameter) {
@@ -2674,6 +2802,7 @@ public final class Linq {
 	 *             The values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> List<T> toList(@NotNull final Iterable<? extends T> values) {
 		val result = new ArrayList<T>(DEFAULT_LIST_SIZE);
 		for (T item : values) {
@@ -2690,6 +2819,7 @@ public final class Linq {
 	 *             The values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> ReifiedList<T> toList(@NotNull final Iterable<T> values,
 			@NotNull final Class<?> genericTypeParameter) {
 		return new ReifiedArrayList<T>(values, genericTypeParameter);
@@ -2702,6 +2832,7 @@ public final class Linq {
 	 *             The values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> ReifiedList<T> toList(
 			@NotNull final ReifiedIterable<T> values) {
 		return new ReifiedArrayList<T>(values);
@@ -2714,6 +2845,7 @@ public final class Linq {
 	 *             The values argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> ReifiedList<T> toList(@NotNull final T[] values) {
 		return new ReifiedArrayList<T>(values);
 	}
@@ -2725,6 +2857,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> union(@NotNull final Iterable<T> first,
 			@NotNull final Iterable<T> second) {
 		return union(first, second, null);
@@ -2737,6 +2870,7 @@ public final class Linq {
 	 *             When the first or second argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> union(@NotNull final Iterable<T> first,
 			@NotNull final Iterable<T> second,
 			final Comparator<? super T> comparer) {
@@ -2761,6 +2895,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] union(@NotNull final T[] first,
 			@NotNull final T[] second) {
 		return union(first, second, null);
@@ -2773,6 +2908,7 @@ public final class Linq {
 	 *             When the first or second argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] union(@NotNull final T[] first,
 			@NotNull final T[] second, final Comparator<? super T> comparer) {
 		T[] firstDistinct;
@@ -2799,6 +2935,7 @@ public final class Linq {
 	 *             When an argument is null
 	 */
 	@Validate
+	@Extension
 	public static <T> Iterable<T> where(@NotNull final Iterable<T> values,
 			@NotNull final Predicate1<? super T> predicate) {
 		for (T element : values) {
@@ -2816,6 +2953,7 @@ public final class Linq {
 	 *             When an argument is null
 	 */
 	@Validate
+	@Extension
 	public static <T> T[] where(@NotNull final T[] values,
 			@NotNull final Predicate1<? super T> predicate) {
 		val result = new ArrayList<T>(DEFAULT_LIST_SIZE);
@@ -2836,6 +2974,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TFirst, TSecond, TResult> Iterable<TResult> zip(
 			@NotNull final Iterable<TFirst> first,
 			@NotNull final Iterable<TSecond> second,
@@ -2855,6 +2994,7 @@ public final class Linq {
 	 *             When an argument is null.
 	 */
 	@Validate
+	@Extension
 	public static <TFirst, TSecond, TResult> TResult[] zip(
 			@NotNull final TFirst[] first, @NotNull final TSecond[] second,
 			@NotNull final Function2<TFirst, TSecond, TResult> function) {
