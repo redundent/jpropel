@@ -39,18 +39,11 @@
 		</javac>
 	</target>
 	
-	<target name="dist" depends="clean, compile">
+	<target name="dist" depends="compile">
 		<mkdir dir="dist" />
 		<jar destfile="dist/${ivy.module}-${ivy.revision}.jar">
 			<fileset dir="build" includes="**/*.class" />
 		</jar>
-		
-		<jar destfile="dist/${ivy.module}-${ivy.revision}-sources.jar">
-			<fileset dir="src" includes="**/*.java" />
-		</jar>
-
-		<copy file="dist/${ivy.module}-${ivy.revision}.jar" todir="${basedir}" />
-		<copy file="dist/${ivy.module}-${ivy.revision}-sources.jar" todir="${basedir}" />
 	</target>
 	
 	<target name="clean">
